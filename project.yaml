@@ -92,4 +92,4 @@ advanced:
         workers_nonproduction: 10
         workers_production_delay: 0
         workers_nonproduction_delay: 0
-    stabilize: true
+    stabilize: false
