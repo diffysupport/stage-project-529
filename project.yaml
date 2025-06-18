@@ -69,7 +69,7 @@ advanced:
     headers:
         - { value: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:46.0) Gecko/20100101 Firefox/46.0', header: User-Agent }
     cookies: cookie-agreed=1
-    custom_js: "document.querySelector(\"#onetrust-accept-btn-handler\").click()\njQuery(\"#notification-popup .analytics--o-exit-close\").click();\nconst video = document.querySelector('video');\n\nif (video) {\n  video.pause();\n  video.currentTime = 0;\n  video.removeAttribute('autoplay');\n  video.load();\n  for (let i = 1; i < 99999; i++) {\n    clearTimeout(i);\n    clearInterval(i);\n  }\n}\n"
+    custom_js: "document.querySelector(\"#onetrust-accept-btn-handler\").click()\njQuery(\"#notification-popup .analytics--o-exit-close\").click();\n\nconst video = document.querySelector('video');\n\n  // Отключить autoplay и другие параметры\n  video.pause();\n  video.currentTime = 0;\n  video.removeAttribute('autoplay');\n  video.removeAttribute('muted');\n  video.removeAttribute('loop');\n\n  // Очистить все таймеры, которые могут запускать video.play()\n  let id = window.setTimeout(() => {}, 0);\n  while (id--) {\n    window.clearTimeout(id);\n    window.clearInterval(id);\n  }\n\n  // Удалить src и перезагрузить видео, чтобы оно гарантированно не играло\n  video.removeAttribute('src');\n  video.load();"
     custom_css: ".container.paragraph {\n\tposition: absolute !important;\n}"
     mock_content: {  }
     sensitivity: 15
