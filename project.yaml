@@ -6,14 +6,8 @@ basic:
         development: ''
     breakpoints:
         - 640
-        - 760
-        - 768
-        - 1024
         - 1080
-        - 1200
         - 1440
-        - 1466
-        - 1920
     pages:
         - /
         - /es
@@ -81,6 +75,17 @@ advanced:
     night_mode: false
     retina_images: false
     single_ip: false
+    login:
+        type: none
+        click_element: false
+        click_element_selector: ''
+        login_url: ''
+        username: ''
+        password: ''
+        username_selector: ''
+        password_selector: ''
+        submit_selector: ''
+        after_login_selector: ''
     performance:
         workers_production: 30
         workers_nonproduction: 10
