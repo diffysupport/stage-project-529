@@ -65,7 +65,7 @@ advanced:
     mask: ''
     remove: '#videoBackground'
     delay: 15
-    scroll: true
+    scroll: false
     headers: {  }
     cookies: cookie-agreed=1
     custom_js: "document.querySelector(\"#onetrust-accept-btn-handler\").click()\njQuery(\"#notification-popup .analytics--o-exit-close\").click();\n\nconst original = document.querySelector('video');\n\nif (original) {\n  const clone = original.cloneNode(true);\n  clone.removeAttribute('autoplay');\n  clone.removeAttribute('muted');\n  clone.removeAttribute('loop');\n  clone.currentTime = 0;\n  clone.load();\n  original.parentNode.replaceChild(clone, original);\n}\n"
