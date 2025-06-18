@@ -66,7 +66,8 @@ advanced:
     remove: '#videoBackground'
     delay: 15
     scroll: false
-    headers: {  }
+    headers:
+        - { value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36', header: User-Agent }
     cookies: cookie-agreed=1
     custom_js: "document.querySelector(\"#onetrust-accept-btn-handler\").click()\njQuery(\"#notification-popup .analytics--o-exit-close\").click();\n\nconst video = document.querySelector('video');\n\n  // Отключить autoplay и другие параметры\n  video.pause();\n  video.currentTime = 0;\n  video.removeAttribute('autoplay');\n  video.removeAttribute('muted');\n  video.removeAttribute('loop');\n\n  // Очистить все таймеры, которые могут запускать video.play()\n  let id = window.setTimeout(() => {}, 0);\n  while (id--) {\n    window.clearTimeout(id);\n    window.clearInterval(id);\n  }\n\n  // Удалить src и перезагрузить видео, чтобы оно гарантированно не играло\n  video.removeAttribute('src');\n  video.load();"
     custom_css: ".container.paragraph {\n\tposition: static !important;\n}"
