@@ -68,7 +68,7 @@ advanced:
     scroll: true
     headers: {  }
     cookies: ''
-    custom_js: ''
+    custom_js: "document.querySelector(\"#onetrust-accept-btn-handler\").click()\njQuery(\"#notification-popup .analytics--o-exit-close\").click();\n\nsetInterval(function(){\n  jQuery('.paragraph--type--sticky-sign-up-component').css('position', 'static');\n}, 200);"
     custom_css: ''
     mock_content: {  }
     sensitivity: 15
