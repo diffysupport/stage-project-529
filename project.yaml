@@ -1,0 +1,89 @@
+basic:
+    name: 'https://www.adpkdquestions.com'
+    environments:
+        production: 'https://www.adpkdquestions.com'
+        staging: ''
+        development: ''
+    breakpoints:
+        - 640
+        - 760
+        - 768
+        - 1024
+        - 1080
+        - 1200
+        - 1440
+        - 1466
+        - 1920
+    pages:
+        - /
+        - /es
+        - /adpkd-background
+        - /es/adpkd-descripcion-general
+        - /adpkd-diagnosis
+        - /es/adpkd-diagnostico
+        - /adpkd-kidney-size
+        - /es/adpkd-informacion-de-contexto
+        - /risk-of-adpkd-progression
+        - /es/riesgo-de-adpkd-progresion
+        - /assessing-kidney-size
+        - /es/evaluar-el-tamano-del-rinon
+        - /living-with-adpkd
+        - /es/vivir-con-adpkd
+        - /find-a-doctor
+        - /es/encontrar-un-medico
+        - /downloadable-resources
+        - /es/tarjetas-de-conversacion
+        - /foundations-advocacy-groups
+        - /es/fundaciones-grupos-de-defensa
+        - /sign-up
+        - /es/registrarse
+        - /sitemap
+        - /es/mapa-del-sitio
+        - /sms-terms-conditions
+        - /es/terminos-y-condiciones-de-los-sms
+        - /404
+        - /es/404
+        - /Receiving-an-ADPKD-diagnosis
+        - /ADPKD-through-their-eyes
+        - /what-to-know
+        - /es/what-to-know
+        - /helpful
+        - /es/helpful
+        - /diagnosed-no
+        - /es/diagnosed-no
+        - /diagnosed-yes
+        - /es/diagnosed-yes
+        - /page
+        - /es/page
+        - /not-so-helpful
+        - /es/not-so-helpful
+        - /interactive-kidney
+        - /community-voices
+        - /es/historias-de-pacientes
+    monitoring:
+        days: {  }
+        type: daily
+        schedule_time: '12:30 AM'
+        schedule_time_zone: Europe/London
+        compare_with: last-production
+        compare_with_fresh: production
+advanced:
+    mask: ''
+    remove: ''
+    delay: 15
+    scroll: true
+    headers: {  }
+    cookies: ''
+    custom_js: ''
+    custom_css: ''
+    mock_content: {  }
+    sensitivity: 15
+    night_mode: false
+    retina_images: false
+    single_ip: false
+    performance:
+        workers_production: 30
+        workers_nonproduction: 10
+        workers_production_delay: 0
+        workers_nonproduction_delay: 0
+    stabilize: true
