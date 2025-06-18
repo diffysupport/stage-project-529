@@ -69,7 +69,7 @@ advanced:
     headers:
         - { value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36', header: User-Agent }
     cookies: cookie-agreed=1
-    custom_js: "document.querySelector(\"#onetrust-accept-btn-handler\").click()\njQuery(\"#notification-popup .analytics--o-exit-close\").click();\n\nconst video = document.querySelector('video');\n  video.pause();\n  video.currentTime = 0;\n\n  video.removeAttribute('autoplay');\n  video.removeAttribute('muted');\n  video.removeAttribute('loop');\n  video.load();\n\n  const clone = video.cloneNode(true);\n  clone.pause();\n  clone.currentTime = 0;\n  clone.removeAttribute('autoplay');\n  clone.removeAttribute('muted');\n  clone.removeAttribute('loop');\n  clone.load();\n\n  video.parentNode.replaceChild(clone, video);\n  let i = 0;\n  while (i < 10000) {\n    clearTimeout(i);\n    clearInterval(i);\n    i++;\n  }\n"
+    custom_js: "document.querySelector(\"#onetrust-accept-btn-handler\").click()\njQuery(\"#notification-popup .analytics--o-exit-close\").click();\nHTMLMediaElement.prototype.play = function () {\n    console.warn('⚠️ Blocked .play()');\n    return Promise.resolve();\n  };\n\n  const video = document.querySelector('video');\n  if (video) {\n    video.pause();\n    video.currentTime = 0;\n    video.removeAttribute('autoplay');\n    video.removeAttribute('muted');\n    video.removeAttribute('loop');\n    video.load();\n  }"
     custom_css: ".container.paragraph {\n\tposition: static !important;\n}"
     mock_content: {  }
     sensitivity: 15
