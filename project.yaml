@@ -62,14 +62,14 @@ basic:
         compare_with: last-production
         compare_with_fresh: production
 advanced:
-    mask: ''
+    mask: video
     remove: '#videoBackground'
     delay: 15
     scroll: false
     headers:
         - { value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36', header: User-Agent }
     cookies: cookie-agreed=1
-    custom_js: "document.querySelector(\"#onetrust-accept-btn-handler\").click()\njQuery(\"#notification-popup .analytics--o-exit-close\").click();\n\n\nconst video = document.querySelector('video');\nif (video) {\n  const canvas = document.createElement('canvas');\n  canvas.width = video.videoWidth;\n  canvas.height = video.videoHeight;\n\n  const ctx = canvas.getContext('2d');\n  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);\n\n  const img = document.createElement('img');\n  img.src = canvas.toDataURL();\n  img.style.width = video.style.width || '100%';\n  img.style.height = video.style.height || '100%';\n\n  video.parentNode.replaceChild(img, video);\n  console.log('🖼 Видео заменено на замороженный кадр.');\n}\n"
+    custom_js: "document.querySelector(\"#onetrust-accept-btn-handler\").click()\njQuery(\"#notification-popup .analytics--o-exit-close\").click();\n\n\nconst video = document.querySelector('video');\nif (video) {\n  const canvas = document.createElement('canvas');\n  canvas.width = video.videoWidth;\n  canvas.height = video.videoHeight;\n\n  const ctx = canvas.getContext('2d');\n  ctx.drawImage(video, 0, 0, canvas.width, canvas.height);\n\n  const img = document.createElement('img');\n  img.src = canvas.toDataURL();\n  img.style.width = video.style.width || '100%';\n  img.style.height = video.style.height || '100%';\n\n  video.parentNode.replaceChild(img, video);\n  console.log('? Видео заменено на замороженный кадр.');\n}\n"
     custom_css: ".container.paragraph {\n\tposition: static !important;\n}"
     mock_content: {  }
     sensitivity: 15
