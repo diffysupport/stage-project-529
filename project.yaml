@@ -27,7 +27,7 @@ advanced:
     headers:
         - { value: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36', header: User-Agent }
     cookies: ''
-    custom_js: "document.querySelector(\"#onetrust-accept-btn-handler\").click()\njQuery(\"#notification-popup .analytics--o-exit-close\").click();\n\ndocument.querySelector('video').removeAttribute('autoplay');\n\ndocument.querySelectorAll('video').forEach(video => {\n    video.addEventListener('play', (event) => {\n      event.srcElement.pause();\n      event.srcElement.currentTime = 0;\n    });\n});\n\ndocument.querySelectorAll('video').forEach(video => {\n  // Pause and reset\n  video.pause();\n  video.currentTime = 0;\n  video.removeAttribute('src');\n  video.load();\n\n  // Disable play\n  video.play = () => {\n    console.log('Blocked video play attempt');\n    return Promise.resolve(); // fake promise\n  };\n});\n"
+    custom_js: "document.querySelector(\"#onetrust-accept-btn-handler\").click()\njQuery(\"#notification-popup .analytics--o-exit-close\").click();\n\ndocument.querySelector('video').removeAttribute('autoplay');\n\ndocument.querySelectorAll('video').forEach(video => {\n  // Pause and reset\n  video.pause();\n  video.currentTime = 1;\n  video.removeAttribute('src');\n  video.load();\n\n  // Disable play\n  video.play = () => {\n    console.log('Blocked video play attempt');\n    return Promise.resolve(); // fake promise\n  };\n});\n"
     custom_css: ".container.paragraph {\n\tposition: static !important;\n}"
     mock_content: {  }
     sensitivity: 15
